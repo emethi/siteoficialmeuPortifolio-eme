@@ -3,123 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Responsivo</title>
+    <meta name="description" content="Portfólio de Designer Gráfico - Emerson Paula">
+    <title>Emerson Paula - Designer Gráfico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="scripts.js" defer></script>
 </head>
 <body>
     <header>
         <div class="container">
-            <img src="img/logo1.webp" alt="Logo" class="logo">
-            <h1>Meu Portfólio</h1>
+            <img src="img/logo-design.jpeg" alt="Logo" class="logo">
+            <h1>Emerson Paula - Designer Gráfico</h1>
             <nav>
                 <ul>
                     <li><a href="#about">Sobre</a></li>
                     <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#testimonials">Depoimentos</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
     <section id="about" class="section">
         <div class="about-container">
-            <img src="img/minhaimg.jpg" alt="Minha Foto" class="profile-pic">
+            <img src="img/minhaimg.jpeg" alt="Minha Foto" class="profile-pic">
             <div class="about-text">
                 <h2>Sobre Mim</h2>
-                <p>Emerson Paula - Desenvolvedor Web e Designer apaixonado por tecnologia e minimalismo.</p>
-                <p>Minha experiência como MEI, técnico de informática e auxiliar administrativo me proporcionou uma visão ampla do mercado e da importância da organização e atendimento ao cliente.</p>
-                <p>Investi na minha formação em Front-End e Inteligência Artificial para oferecer soluções inovadoras e eficientes.</p>
-        
+                <p>Olá! Sou Emerson Paula, Designer Gráfico apaixonado por criar soluções visuais que impactam e comunicam. Especializo-me em branding, design de interfaces e ilustrações únicas.</p>
+                <p>Minha experiência como freelancer e em parcerias com agências me deu uma visão ampla sobre como transformar ideias em designs memoráveis. Trabalho com ferramentas como Photoshop, Illustrator e Figma para entregar projetos criativos e funcionais.</p>
                 <p class="focus-title">Meu Foco:</p>
                 <ul>
-                    <li>Desenvolvimento de websites minimalistas e intuitivos.</li>
-                    <li>Interfaces modernas em tons de azul, preto e cinza.</li>
-                    <li>Otimização para dispositivos móveis e experiência do usuário aprimorada.</li>
-                    <li>Criação de sites institucionais e landing pages personalizadas.</li>
+                    <li>Criação de identidades visuais marcantes.</li>
+                    <li>Designs intuitivos para interfaces digitais.</li>
+                    <li>Ilustrações personalizadas para marcas e histórias.</li>
                 </ul>
             </div>
         </div>
-            
     </section>
-            <section class="section">
-                <div class="skills">
-                    <div class="swiper-slide"><img src="img/hcj.png" alt="Slide 2"></div>
-                    <div class="skill">
-                        <p>HTML</p>
-                        <div class="progress">
-                            <div class="progress-bar html"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <p>CSS</p>
-                        <div class="progress">
-                            <div class="progress-bar css"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <p>JavaScript</p>
-                        <div class="progress">
-                            <div class="progress-bar js"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            
-    </section>
-    
-    <section id="home-slider">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="img/img2.1.jpg" alt="Slide 1"></div>
-            
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill"><img src="img/photoshop-icon.jpeg" alt="Photoshop"><p>Adobe Photoshop</p></div>
+                <div class="skill"><img src="img/illustrator-icon.jpeg" alt="Illustrator"><p>Adobe Illustrator</p></div>
+                <div class="skill"><img src="img/figma-icon.jpeg" alt="Figma"><p>Figma</p></div>
             </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
         </div>
     </section>
-    
+
     <section id="projects" class="section">
         <div class="container">
             <h2>Meus Projetos</h2>
+            <div class="project-filters">
+                <button data-filter="all" class="active">Todos</button>
+                <button data-filter="branding">Branding</button>
+                <button data-filter="uiux">UI/UX</button>
+                <button data-filter="illustration">Ilustração</button>
+            </div>
             <div class="project-grid">
-                <div class="project" data-category="front-end">
-                    <img src="img/qrcode.avif" alt="QR Code Generator Preview">
-                    <h3>Gerador de QR Code</h3>
-                    <p>Uma ferramenta simples para gerar códigos QR personalizados.</p>
-                    <a href="CODE QR/index.html" target="_blank" rel="noopener noreferrer">Ver Projeto</a>
+                <div class="project" data-category="branding">
+                    <img src="img/branding-project.jpeg" alt="Projeto de Branding">
+                    <h3>Identidade Visual Café</h3>
+                    <p>Logotipo e materiais de marca para um café local.</p>
+                    <button class="view-project">Ver Detalhes</button>
                 </div>
-                <div class="project" data-category="front-end">
-                    <img src="img/tabuada.png" alt="Tabuada Interativa Preview">
-                    <h3>Tabuada Interativa</h3>
-                    <p>Uma aplicação interativa para aprender e praticar tabuadas.</p>
-                    <a href="TABUADA/index.html" target="_blank" rel="noopener noreferrer">Ver Projeto</a>
+                <div class="project" data-category="uiux">
+                    <img src="img/uiux-project.jpeg" alt="Projeto de UI/UX">
+                    <h3>App de Delivery</h3>
+                    <p>Interface intuitiva para aplicativo de entrega.</p>
+                    <button class="view-project">Ver Detalhes</button>
                 </div>
-                <div class="project" data-category="front-end">
-                    <img src="img/site.jpg" alt="Site Estático Preview">
-                    <h3>Site Estático</h3>
-                    <p>Um site minimalista e intuitivo para o seu negócio(Editável).</p>
-                    <a href="https://ornamentarsite-oficial.web.app/" target="_blank" rel="noopener noreferrer">Ver Projeto</a>
+                <div class="project" data-category="illustration">
+                    <img src="img/illustration-project.jpeg" alt="Ilustração">
+                    <h3>Livro Infantil</h3>
+                    <p>Ilustrações coloridas para um livro infantil.</p>
+                    <button class="view-project">Ver Detalhes</button>
                 </div>
-                <div class="project" data-category="front-end">
-                    <img src="img/senha.jpg" alt="Força de senha Preview">
-                    <h3>Força de Senha</h3>
-                    <p>Deseja senhas mais dificéis de hackear? Essa aplicação te auxilia na criação de senhas fortes.</p>
-                    <a href="FORÇA DE SENHA/index.html" target="_blank" rel="noopener noreferrer">Ver Projeto</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section">
+        <div class="container">
+            <h2>Depoimentos</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"Emerson elevou nossa marca com um design incrível!"</p>
+                    <cite>- Cliente Satisfeito</cite>
                 </div>
-                <div class="project" data-category="front-end">
-                    <img src="img/apple.jpg" alt="Clone de Pagina Preview">
-                    <h3>Pagina de vendas do Iphone</h3>
-                    <p>Viu uma página web e se inpirou? Criamos uma pagina semelhante para o seu negócio.</p>
-                    <a href="PAG. IPHONE/index.html" target="_blank" rel="noopener noreferrer">Ver Projeto</a>
-                </div>
-                <div class="project" data-category="front-end">
-                    <img src="img/extra.png" alt="Projeto Extra 6 Preview">
-                    <h3>Projeto Extra</h3>
-                    <p>Projeto extra.</p>
-                    <a href="#" target="_blank" rel="noopener noreferrer">Ver Projeto</a>
+                <div class="testimonial">
+                    <p>"Profissional criativo e detalhista. Superou expectativas."</p>
+                    <cite>- Agência ABC</cite>
                 </div>
             </div>
         </div>
@@ -128,38 +106,35 @@
     <section id="contact" class="section">
         <div class="container">
             <h2>Entre em Contato</h2>
-            <form id="contact-form" action="https://formspree.io/f/mwpvbgoo" method="POST">
+            <form id="contact-form">
                 <label for="name">Nome</label>
                 <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
-    
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-    
                 <label for="message">Mensagem</label>
                 <textarea id="message" name="message" placeholder="Digite sua mensagem" required></textarea>
-    
                 <button type="submit">Enviar</button>
             </form>
         </div>
     </section>
-    
-   
+
     <footer>
         <div class="container">
-            <p>&copy; 2025 Meu Portfólio. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Emerson Paula - Designer Gráfico. Todos os direitos reservados.</p>
         </div>
     </footer>
-    
+
     <a href="https://wa.me/5586988165714" target="_blank" rel="noopener noreferrer" class="whatsapp-button">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
-    
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            loop: true,
-            pagination: { el: '.swiper-pagination', clickable: true },
-            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
-        });
-    </script>
+
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="" alt="Projeto" id="modal-img">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+        </div>
+    </div>
 </body>
 </html>
