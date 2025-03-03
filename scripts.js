@@ -1,72 +1,59 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Função para envio do formulário via Formspree
-    document.getElementById('contact-form').addEventListener('submit', async function(event) {
-        event.preventDefault(); // Impede o envio padrão do formulário
-
-        const form = this;
+document.addEventListener('DOMContentLoaded', () => {
+    // Formulário de Contato
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
         const formData = new FormData(form);
-
         try {
-            const response = await fetch("https://formspree.io/f/mwpvbgoo", {
-                method: "POST",
+            const response = await fetch('https://formspree.io/f/mwpvbgoo', {
+                method: 'POST',
                 body: formData,
                 headers: { 'Accept': 'application/json' }
             });
-
             if (response.ok) {
-                alert("Mensagem enviada com sucesso!");
-                form.reset(); // Limpa o formulário após envio
+                alert('Mensagem enviada com sucesso!');
+                form.reset();
             } else {
-                alert("Erro ao enviar a mensagem. Tente novamente mais tarde.");
+                alert('Erro ao enviar. Tente novamente.');
             }
         } catch (error) {
-            alert("Erro na conexão. Verifique sua internet.");
+            alert('Erro de conexão. Verifique sua internet.');
         }
     });
 
-    // Variável para controlar o índice do projeto ativo
-    let currentProjectIndex = 0;
-
-    // Função para navegar entre os projetos
-    function navigateProjects(direction) {
-        const projects = document.querySelectorAll('.project');
-        const totalProjects = projects.length;
-
-        // Remove a classe 'active' do projeto atual
-        projects[currentProjectIndex].classList.remove('active');
-
-        // Atualiza o índice com base na direção
-        currentProjectIndex += direction;
-
-        // Garante que o índice fique dentro dos limites
-        if (currentProjectIndex < 0) {
-            currentProjectIndex = totalProjects - 1;
-        } else if (currentProjectIndex >= totalProjects) {
-            currentProjectIndex = 0;
-        }
-
-        // Adiciona a classe 'active' ao novo projeto
-        projects[currentProjectIndex].classList.add('active');
-    }
-
-    // Botões de navegação de projetos
-    document.querySelectorAll(".prev-button").forEach(button => {
-        button.addEventListener("click", function() {
-            navigateProjects(-1);
+    // Filtros de Projetos
+    const filterButtons = document.querySelectorAll('.project-filters button');
+    const projects = document.querySelectorAll('.project');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            const category = button.getAttribute('data-filter');
+            projects.forEach(project => {
+                project.style.display = (category === 'all' || project.getAttribute('data-category') === category) ? 'block' : 'none';
+            });
         });
     });
 
-    document.querySelectorAll(".next-button").forEach(button => {
-        button.addEventListener("click", function() {
-            navigateProjects(1);
+    // Modal de Projetos
+    const modal = document.getElementById('project-modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const closeModal = document.querySelector('.close');
+
+    document.querySelectorAll('.view-project').forEach(button => {
+        button.addEventListener('click', () => {
+            const project = button.closest('.project');
+            modalImg.src = project.querySelector('img').src;
+            modalTitle.textContent = project.querySelector('h3').textContent;
+            modalDescription.textContent = project.querySelector('p').textContent;
+            modal.style.display = 'flex';
         });
     });
 
-    // Animação do logo girando automaticamente
-    const logo = document.querySelector(".logo");
-    if (logo) {
-        setInterval(() => {
-            logo.style.transform = `rotate(${Date.now() / 50}deg)`;
-        }, 50);
-    }
+    closeModal.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) modal.style.display = 'none';
+    });
 });
