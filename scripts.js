@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Menu Hamburguer
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navUl = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navUl.classList.toggle('active');
+    });
+
+    // Fechar menu ao clicar em um link
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                menuToggle.classList.remove('active');
+                navUl.classList.remove('active');
+            }
+        });
+    });
+
     // Formulário de Contato
     const form = document.getElementById('contact-form');
     form.addEventListener('submit', async (e) => {
