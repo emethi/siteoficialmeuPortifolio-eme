@@ -385,3 +385,37 @@ nav a:hover {
         padding-top: 150px; /* Ajuste conforme necessário */
     }
 }
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#modal-img {
+    width: 100%;
+    border-radius: 10px;
+}
