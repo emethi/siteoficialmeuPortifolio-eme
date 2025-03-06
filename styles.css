@@ -31,6 +31,10 @@ header {
     z-index: 1000;
 }
 
+header {
+    height: 150px; /* Altura fixa do cabeçalho */
+}
+
 header .container {
     display: flex;
     justify-content: space-between;
@@ -96,8 +100,9 @@ nav a:hover {
     max-width: 900px; /* Largura máxima em telas grandes */
     margin: 0 auto; /* Centraliza o container */
     padding: 130px;
+    padding-top: 150px; /* Adicione isso */
   }
-  
+
   /* Estilo para a foto */
   .about-image {
     width: 100%; /* Ocupa toda a largura em telas pequenas */
@@ -318,6 +323,12 @@ nav a:hover {
     .menu-toggle {
         display: flex; /* Ativa o menu hamburguer */
     }
+    
+    @media (max-width: 768px) {
+        .logo {
+            height: 100px; /* Menor altura no mobile */
+        }
+    }
 
     nav ul {
         display: none; /* Esconde o menu padrão */
@@ -366,5 +377,11 @@ nav a:hover {
 
     #contact form {
         max-width: 90%; /* Formulário ocupa toda a largura em mobile */
+    }
+}
+/* Se quiser ajustar apenas em mobile (melhor prática): */
+@media (max-width: 768px) {
+    section, .section {
+        padding-top: 150px; /* Ajuste conforme necessário */
     }
 }
